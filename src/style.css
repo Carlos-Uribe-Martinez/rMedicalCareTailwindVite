@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* text-xs	font-size: 0.75rem;  12px 
+line-height: 1rem;  16px 
+text-sm	font-size: 0.875rem;  14px 
+line-height: 1.25rem;  20px 
+text-base	font-size: 1rem;  16px 
+line-height: 1.5rem;  24px 
+text-lg	font-size: 1.125rem;  18px 
+line-height: 1.75rem;  28px 
+text-xl	font-size: 1.25rem;  20px 
+line-height: 1.75rem; 28px */
+
+.text-4xs {
+  @apply text-[8px];
+}
+
+.text-3xs {
+  @apply text-[9px];
+}
+
+.text-2xs {
+  @apply text-[10px];
+}
+
+.text-1xs {
+  @apply text-[11px];
+}
+
+.text-1sm {
+  @apply text-[13px];
+}
+
+.text-1base {
+  @apply text-[15px];
+}
+
+.text-1lg {
+  @apply text-[17px];
+}
+
+.text-1xl {
+  @apply text-[19px];
+}
+
+.seeAllCont {
+  @apply grid grid-cols-[14fr,3fr] items-center px-3;
+}
+
+.B-seeAll {
+  @apply font-medium text-lg;
+}
+
+.seeAll {
+  @apply text-[14px] text-[#0B74FA];
+}
