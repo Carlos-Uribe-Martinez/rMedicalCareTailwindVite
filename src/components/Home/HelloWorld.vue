@@ -1,16 +1,17 @@
 <script setup>
-import { ref } from 'vue'
+import { ref } from "vue";
 
 defineProps({
   msg: String,
-})
+  yearsExp: Number,
+});
 
-const count = ref(0)
+const count = ref(0);
 </script>
 
 <template>
-  <h1>{{ msg }}</h1>
-
+  <h1>Dr. {{ msg }}</h1>
+  <h2>{{ yearsExp }} years of experience</h2>
   <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>
     <p>
