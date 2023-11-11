@@ -1,26 +1,7 @@
 <script setup>
 import { ref } from "vue";
-
-const specialities = ref([
-  {
-    Route: "/Neurologia",
-    Area: "Neuroology",
-    Available: 17,
-    ImgRoute: "neurologyWhite.png",
-    Color: "azul",
-    TextColor: "blanco",
-  },
-  {
-    Route: "/Radiologia",
-    Area: "Radiology",
-    Available: 17,
-    ImgRoute: "cardiology.png",
-    Color: "gray-300",
-    TextColor: "gray-400",
-  },
-]);
-
-console.log(specialities["Color"]);
+import { useDataStore } from "../../stores/DataStore";
+const DataStore = useDataStore();
 </script>
 
 <template>
@@ -28,8 +9,8 @@ console.log(specialities["Color"]);
     <div class="specialities-OF">
       <router-link
         :to="speciality.Route"
-        v-for="speciality in specialities"
-        :class="'spcNeuro bg-' + speciality.Color"
+        v-for="speciality in DataStore.specialities"
+        :class="'spcNeuro ' + speciality.Color"
       >
         <img
           :src="'/src/assets/IMG/' + speciality.ImgRoute"
@@ -37,7 +18,7 @@ console.log(specialities["Color"]);
           class="h-9"
         />
         <div class="specialitiesInfo">
-          <span :class="'SpcTitle text-' + speciality.TextColor">{{
+          <span :class="'SpcTitle ' + speciality.TextColor">{{
             speciality.Area
           }}</span>
           <span class="specialitiesStats"

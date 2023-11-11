@@ -1,4 +1,6 @@
 node_modules/
+components/Home/svg/
+src/IMG/
 
 # Logs
 logs

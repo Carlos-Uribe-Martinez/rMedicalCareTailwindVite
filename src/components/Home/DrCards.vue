@@ -2,34 +2,16 @@
 import telefono from "../svg/telefono.vue";
 import star from "../svg/star.vue";
 
-import { ref } from "vue";
+import { ref, reactive, computed, watch } from "vue";
 
-const doctors = ref([
-  {
-    DrName: "Dr. Webber",
-    Experience: 5,
-    Rating: `5.0`,
-    Votes: `3,988`,
-    Speciality: "Neurology",
-    RouteImage: "src/assets/IMG/doctor2.png",
-    RouteIcon: "src/assets/IMG/neurologyBlue.png",
-  },
-  {
-    DrName: "Dr. Lee",
-    Experience: 4,
-    Rating: `4.0`,
-    Votes: `2,587`,
-    Speciality: "Radiology",
-    RouteImage: "src/assets/IMG/doctor1.png",
-    RouteIcon: "src/assets/IMG/cardiology.png",
-  },
-]);
+import { useDataStore } from "../../stores/DataStore";
+const DataStore = useDataStore();
 </script>
 
 <template>
   <div class="B-DrCard">
     <div class="DrCard-OF">
-      <div class="DrCard" v-for="doctor in doctors">
+      <div class="DrCard" v-for="doctor in DataStore.doctors">
         <div class="DrName">
           <div class="B-ImgDr">
             <img

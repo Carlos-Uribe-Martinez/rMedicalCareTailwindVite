@@ -1,14 +1,20 @@
 <script setup>
 import filt from "../svg/filt.vue";
+import { useDataStore } from "../../stores/DataStore";
+const DataStore = useDataStore();
 </script>
 
 <template>
   <div class="profile">
     <div class="A-profile">
       <img src="src/assets/IMG/Esther.png" alt="" class="ImgEsther" />
-      <div class="profileInfo">
-        <span class="profileName">Esther Howard</span>
-        <span class="text-xs">Female, 23 y.o</span>
+      <div class="profileInfo" v-for="profile in DataStore.profiles">
+        <span class="profileName"
+          >{{ profile.FirstName }} {{ profile.LastName }}</span
+        >
+        <span class="text-xs"
+          >{{ profile.PacientGender }} , {{ profile.PacientAge }} y.o</span
+        >
       </div>
     </div>
     <button class="B-Filter">

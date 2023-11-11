@@ -3,32 +3,14 @@ import telefono from "../svg/telefono.vue";
 import calendar from "../svg/calendar.vue";
 import { ref } from "vue";
 
-const dates = ref([
-  {
-    Month: "SEPT",
-    Day: "07",
-    Txt1: "Clinic Visit",
-    Txt2: "Appointment",
-    Speciality: "Neurologist",
-    Dr: "Kevin",
-    RouteImg: "doctor1.png",
-  },
-  {
-    Month: "DEC",
-    Day: "10",
-    Txt1: "Video",
-    Txt2: "Consulting",
-    Speciality: "Psychiatrist",
-    Dr: "Kelly Karl",
-    RouteImg: "doctor0.png",
-  },
-]);
+import { useDataStore } from "../../stores/DataStore";
+const DataStore = useDataStore();
 </script>
 
 <template>
   <div class="B-cards">
     <div class="cardsOF">
-      <div class="Card" v-for="date in dates">
+      <div class="Card" v-for="date in DataStore.dates">
         <div class="B-calendarIcon">
           <div class="calendarIcon">
             <calendar />

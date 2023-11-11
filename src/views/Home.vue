@@ -4,15 +4,22 @@ import Search from "../components/Home/Search.vue";
 import SmallCard from "../components/Home/SmallCard.vue";
 import DrCards from "../components/Home/DrCards.vue";
 import DateCards from "../components/Home/DateCards.vue";
+
+import { onMounted } from "vue";
+import { useDataStore } from "../stores/DataStore";
+const DataStore = useDataStore();
+onMounted(() => {
+  console.log(DataStore.assunts);
+});
 </script>
 
 <template>
-  <SeeAll asunt="Meet a Doctor" />
+  <SeeAll :asunt="DataStore.assunts[0].A" />
   <Search />
   <SmallCard />
-  <SeeAll asunt="My Recent Visit" />
+  <SeeAll :asunt="DataStore.assunts[0].B" />
   <DrCards />
-  <SeeAll asunt="My Checkup Schedule" />
+  <SeeAll :asunt="DataStore.assunts[0].C" />
   <DateCards />
 </template>
 
